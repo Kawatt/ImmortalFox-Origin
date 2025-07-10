@@ -1,32 +1,72 @@
 {
     "name": "Freezing Aura",
     "description": "You freeze every creature that dares stand close to you.",
-    "type": "apoli:action_over_time",
-    "interval": 20,
-    "entity_action": {
-        "type": "apoli:area_of_effect",
-        "radius": 4,
-        "bientity_action": {
-            "type": "apoli:target_action",
-            "action": {
-                "type": "apoli:grant_power",
-                "power": "*:freezing",
-                "source": "*:*"
+    "type": "apoli:multiple",
+    "freeze": {
+        "type": "apoli:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "apoli:area_of_effect",
+            "radius": 4,
+            "bientity_action": {
+                "type": "apoli:target_action",
+                "action": {
+                    "type": "apoli:grant_power",
+                    "power": "*:freezing",
+                    "source": "*:*"
+                }
+            },
+            "bientity_condition": {
+                "type": "apoli:target_condition",
+                "condition": {
+                    "type": "apoli:and",
+                    "conditions": [
+                        {
+                            "type": "apoli:living"
+                        },
+                        {
+                            "type": "origins:origin",
+                            "origin": "*:fox",
+                            "inverted": true
+                        }
+                    ]
+                }
             }
         },
-        "bientity_condition": {
-            "type": "apoli:target_condition",
+        "condition": {
+            "type": "apoli:biome",
             "condition": {
-                "type": "apoli:living"
+                "type": "apoli:temperature",
+                "comparison": "<",
+                "compare_to": 2
             }
         }
     },
-    "condition": {
-        "type": "apoli:biome",
-        "condition": {
-            "type": "apoli:temperature",
-            "comparison": "<",
-            "compare_to": 2
+    "tag": {
+        "type": "apoli:action_on_callback",
+        "entity_action_gained": {
+            "type": "apoli:execute_command",
+            "command": "tag @s add imfoxkwt.fox"
+        },
+        "entity_action_lost": {
+            "type": "apoli:execute_command",
+            "command": "tag @s remove imfoxkwt.fox"
+        }
+    },
+    "particles": {
+        "type": "apoli:particle",
+        "particle": "minecraft:snowflake",
+        "frequency": 10
+    },
+    "shaking": {
+        "type": "apoli:shaking"
+    },
+    "walker": {
+        "type": "apoli:modify_enchantment_level",
+        "enchantment": "minecraft:frost_walker",
+        "modifier": {
+            "operation": "add_base_early",
+            "value": 1
         }
     }
 }

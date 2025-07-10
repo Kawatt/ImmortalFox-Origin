@@ -1,0 +1,1 @@
+execute at @e[tag=imfoxkwt.target] anchored eyes facing entity @s eyes run function imfoxkwt:raycast/step

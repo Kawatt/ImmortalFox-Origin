@@ -1,0 +1,1 @@
+execute unless entity @s[dy=0,dx=0,dz=0] run function imfoxkwt:raycast/step

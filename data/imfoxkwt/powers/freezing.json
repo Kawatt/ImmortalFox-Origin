@@ -17,8 +17,13 @@
         "type": "apoli:action_over_time",
         "interval": 20,
         "rising_action": {
-            "type": "apoli:execute_command",
-            "command": "power remove @s imfoxkwt:freezing"
+            "type": "apoli:and",
+            "actions": [
+                {
+                    "type": "apoli:execute_command",
+                    "command": "power remove @s imfoxkwt:freezing"
+                }
+            ]
         },
         "condition": {
             "type": "apoli:command",
@@ -26,5 +31,10 @@
             "comparison": "==",
             "compare_to": 0
         }
+    },
+    "particles": {
+        "type": "apoli:particle",
+        "particle": "minecraft:snowflake",
+        "frequency": 10
     }
 }

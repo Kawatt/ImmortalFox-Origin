@@ -1,0 +1,10 @@
+{
+    "name": "Soul Walker",
+    "description": "You can walk faster on soulsand.",
+    "type": "apoli:modify_enchantment_level",
+    "enchantment": "minecraft:soul_speed",
+    "modifier": {
+        "operation": "addition",
+        "value": 1
+    }
+}

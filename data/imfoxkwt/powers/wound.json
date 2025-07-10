@@ -1,0 +1,14 @@
+{
+    "name": "Cursed Wounds",
+    "description": "You cannot regenerate health naturally, or with effects.",
+    "type": "origins:multiple",
+    "regen": {
+        "type": "apoli:disable_regen"
+    },
+    "potion": {
+        "type": "apoli:effect_immunity",
+        "effects": [
+            "minecraft:regeneration"
+        ]
+    }
+}

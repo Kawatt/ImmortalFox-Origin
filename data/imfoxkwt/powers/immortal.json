@@ -57,6 +57,7 @@
     },
     "res": {
         "type": "apoli:resource",
+        "start_value": 0,
         "min": -18,
         "max": 0,
         "hud_render": {
@@ -75,9 +76,22 @@
     "sleep": {
         "type": "apoli:action_on_wake_up",
         "entity_action": {
-            "type": "apoli:change_resource",
-            "resource": "*:*_res",
-            "change": 2
+            "type": "apoli:and",
+            "actions": [
+                {
+                    "type": "apoli:change_resource",
+                    "resource": "*:*_res",
+                    "change": 2
+                },
+                {
+                    "type": "apoli:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "apoli:heal",
+                        "amount": 2
+                    }
+                }
+            ]
         }
     },
     "reset": {

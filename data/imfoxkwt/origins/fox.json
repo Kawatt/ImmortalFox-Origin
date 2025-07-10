@@ -1,16 +1,18 @@
 {
     "powers": [
         "imfoxkwt:immortal",
-        "imfoxkwt:insomniac",
+        "imfoxkwt:wound",
+        "imfoxkwt:soul",
         "imfoxkwt:freeze",
         "imfoxkwt:experienced",
-        "imfoxkwt:metabolism"
+        "imfoxkwt:soulspeed",
+        "imfoxkwt:insomniac"
     ],
     "icon": {
         "item": "minecraft:snowball",
-        "tag": "{CustomModelData:9267590,Enchantments:[{}]}"
+        "tag": "{CustomModelData:9267590}"
     },
     "impact": 3,
     "name": "Immortal Fox",
-    "description": "Cursed creature that can't die"
+    "description": "Cursed creature that can't die. It feeds on the souls of those around it."
 }
