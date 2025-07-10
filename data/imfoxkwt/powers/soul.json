@@ -127,7 +127,7 @@
                 {
                     "type": "apoli:ingredient",
                     "ingredient": {
-                        "tag": "*:food_with_important_effects"
+                        "tag": "origins:ignore_diet"
                     },
                     "inverted": true
                 }
