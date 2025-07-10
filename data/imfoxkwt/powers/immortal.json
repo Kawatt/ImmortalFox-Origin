@@ -8,13 +8,32 @@
             "type": "apoli:and",
             "actions": [
                 {
-                    "type": "apoli:heal",
-                    "amount": 40
-                },
-                {
                     "type": "apoli:change_resource",
                     "resource": "*:*_res",
                     "change": -2
+                },
+                {
+                    "type": "apoli:extinguish"
+                },
+                {
+                    "type": "apoli:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "apoli:heal",
+                        "amount": 40
+                    }
+                },
+                {
+                    "type": "apoli:clear_effect",
+                    "effect": "minecraft:poison"
+                },
+                {
+                    "type": "apoli:clear_effect",
+                    "effect": "minecraft:poison"
+                },
+                {
+                    "type": "apoli:clear_effect",
+                    "effect": "minecraft:wither"
                 }
             ]
         },
@@ -64,10 +83,23 @@
     "reset": {
         "type": "apoli:action_on_callback",
         "entity_action_respawned": {
-            "type": "apoli:change_resource",
-            "resource": "*:*_res",
-            "operation": "set",
-            "change": 0
+            "type": "apoli:and",
+            "actions": [
+                {
+                    "type": "apoli:change_resource",
+                    "resource": "*:*_res",
+                    "operation": "set",
+                    "change": 0
+                },
+                {
+                    "type": "apoli:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "apoli:heal",
+                        "amount": 40
+                    }
+                }
+            ]
         }
     }
 }
