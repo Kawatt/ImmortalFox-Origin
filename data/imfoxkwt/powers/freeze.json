@@ -1,0 +1,32 @@
+{
+    "name": "Freezing Aura",
+    "description": "You freeze every creature that dares stand close to you.",
+    "type": "apoli:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "apoli:area_of_effect",
+        "radius": 4,
+        "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+                "type": "apoli:grant_power",
+                "power": "*:freezing",
+                "source": "*:*"
+            }
+        },
+        "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+                "type": "apoli:living"
+            }
+        }
+    },
+    "condition": {
+        "type": "apoli:biome",
+        "condition": {
+            "type": "apoli:temperature",
+            "comparison": "<",
+            "compare_to": 2
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "name": "Freezing",
+    "description": "Granted by Freeze power, removes itself.",
+    "type": "apoli:multiple",
+    "freeze": {
+        "type": "apoli:freeze",
+        "condition": {
+            "type": "apoli:biome",
+            "condition": {
+                "type": "apoli:temperature",
+                "comparison": "<",
+                "compare_to": 2
+            }
+        }
+    },
+    "remove": {
+        "type": "apoli:action_over_time",
+        "interval": 20,
+        "rising_action": {
+            "type": "apoli:execute_command",
+            "command": "power remove @s imfoxkwt:freezing"
+        },
+        "condition": {
+            "type": "apoli:command",
+            "command": "execute if entity @a[tag=imfoxkwt.fox,distance=..5]",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    }
+}

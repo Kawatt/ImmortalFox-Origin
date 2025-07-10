@@ -1,0 +1,73 @@
+{
+    "name": "Immortal",
+    "description": "Your body resists death against your will, yet even this curse has a limit. Rest to restore your energy.",
+    "type": "origins:multiple",
+    "prevent": {
+        "type": "apoli:prevent_death",
+        "entity_action": {
+            "type": "apoli:and",
+            "actions": [
+                {
+                    "type": "apoli:heal",
+                    "amount": 40
+                },
+                {
+                    "type": "apoli:change_resource",
+                    "resource": "*:*_res",
+                    "change": -2
+                }
+            ]
+        },
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "apoli:attribute",
+                    "attribute": "minecraft:generic.max_health",
+                    "comparison": ">",
+                    "compare_to": 2
+                },
+                {
+                    "type": "apoli:resource",
+                    "resource": "*:*_res",
+                    "comparison": ">",
+                    "compare_to": -18
+                }
+            ]
+        }
+    },
+    "res": {
+        "type": "apoli:resource",
+        "min": -18,
+        "max": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "health": {
+        "type": "apoli:modify_attribute",
+        "attribute": "minecraft:generic.max_health",
+        "modifier": {
+            "operation": "addition",
+            "resource": "*:*_res",
+            "value": 0
+        }
+    },
+    "sleep": {
+        "type": "apoli:action_on_wake_up",
+        "entity_action": {
+            "type": "apoli:change_resource",
+            "resource": "*:*_res",
+            "change": 2
+        }
+    },
+    "reset": {
+        "type": "apoli:action_on_callback",
+        "entity_action_respawned": {
+            "type": "apoli:change_resource",
+            "resource": "*:*_res",
+            "operation": "set",
+            "change": 0
+        }
+    }
+}

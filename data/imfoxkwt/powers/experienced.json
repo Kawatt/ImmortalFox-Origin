@@ -1,0 +1,12 @@
+{
+    "name": "Experienced",
+    "description": "You gain experience at a much higher rate.",
+    "type": "apoli:multiple",
+    "exp": {
+        "type": "origins:modify_xp_gain",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 1
+        }
+    }
+}

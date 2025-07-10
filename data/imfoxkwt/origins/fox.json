@@ -1,0 +1,16 @@
+{
+    "powers": [
+        "imfoxkwt:immortal",
+        "imfoxkwt:insomniac",
+        "imfoxkwt:freeze",
+        "imfoxkwt:experienced",
+        "origins:burn_in_daylight"
+    ],
+    "icon": {
+        "item": "minecraft:snowball",
+        "tag": "{CustomModelData:9267590,Enchantments:[{}]}"
+    },
+    "impact": 3,
+    "name": "Immortal Fox",
+    "description": "Cursed creature that can't die"
+}

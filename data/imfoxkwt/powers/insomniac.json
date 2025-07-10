@@ -1,0 +1,9 @@
+{
+    "name": "Insomniac",
+    "description": "Phantoms never stop targeting you.",
+    "type": "apoli:modify_insomnia_ticks",
+    "modifier": {
+        "operation": "set_total",
+        "value": 96000
+    }
+}
