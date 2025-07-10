@@ -138,6 +138,12 @@
         "type": "apoli:active_self",
         "entity_action": {
             "type": "apoli:if_else",
+            "condition": {
+                "type": "apoli:resource",
+                "resource": "*:*_soul",
+                "comparison": ">=",
+                "compare_to": 100
+            },
             "if_action": {
                 "type": "apoli:and",
                 "actions": [
@@ -162,7 +168,7 @@
             },
             "else_action": {
                 "type": "apoli:execute_command",
-                "command": "title @s actionbar ["",{\"text\":\"Not enough \",\"color\":\"gray\"},{\"text\":\"Souls\",\"color\":\"aqua\"}]"
+                "command": "title @s actionbar [\"\",{\"text\":\"Not enough \",\"color\":\"gray\"},{\"text\":\"Souls\",\"color\":\"aqua\"}]"
             }
         },
         "condition": {
@@ -172,12 +178,6 @@
                     "type": "apoli:relative_health",
                     "comparison": "!=",
                     "compare_to": 1
-                },
-                {
-                    "type": "apoli:resource",
-                    "resource": "*:*_soul",
-                    "comparison": ">=",
-                    "compare_to": 100
                 }
             ]
         }
